@@ -1,102 +1,240 @@
+/* =========================
+   GLOBAL
+========================= */
+
 body{
     margin: 0;
     min-height: 100vh;
     font-family: Arial, sans-serif;
+    color: white;
 
     background: linear-gradient(
         to bottom,
-        /* Upper 70% */
-        #07101f 0%,
-        #152a58 35%,
-        #30206d 70%,
 
-        /* Lower 30% */
+        /* Upper 60% */
+        #07101f 0%,
+        #152a58 30%,
+        #07202f 60%,
+
+        /* Lower 40% */
         #000000 60%,
         #000000 100%
     );
-
-    color: white;
 }
+
 .container{
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
 }
-.topbar {
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.topbar{
     display:flex;
-    justify-content: space-between; /* Name on left, nav on right */
-    align-items: center;
-    padding:20px 6vw;
-}
-
-.nav1 ul {
-    display: flex;
-    font-weight: bold;
-    list-style: none;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-}
-
-.nav1 a {
-    position: relative;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-.nav1 a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    background: #29b058;
-
-    transform: scaleY(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-.nav1 a:hover::after
-{
-    transform:scale(1);
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
 }
 
 .logo{
-    height: 70px;
-    width: auto;
+    height:70px;
+    width:auto;
 }
 
+.nav1 ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+    margin:0;
+    padding:0;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.nav1 a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav1 a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:100%;
+    height:2px;
+    background:#29b058;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.3s;
+}
+
+.nav1 a:hover::after{
+    transform:scaleX(1);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.TopGetStarted{
+    background:#29b058;
+    color:white;
+    border:none;
+    border-radius:2px;
+    font-weight:bold;
+    cursor:pointer;
+}
 .GetStarted{
-    background-color: #29b058;
-    color: rgb(255, 255, 255);
-    /* padding: 10px 20px; */
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+    background:#29b058;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.ViewDemo{
+    margin-left:15px;
+    padding:12px 24px;
+    background:transparent;
+    color:white;
+    border:2px solid white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+    margin-top:70px;
 }
 
 .content{
-    padding: 0 6vw;
+    flex:1;
 }
 
+.content h4{
+    color:#29b058;
+    margin-bottom:10px;
+}
+
+.content h1{
+    font-size:70px;
+    margin:0;
+}
+
+.words{
+    color:#29b058;
+}
+
+.TrackerDesciption{
+    max-width:500px;
+    line-height:1.6;
+    color:#c7c7c7;
+    font-weight:normal;
+    margin:30px 0;
+}
+
+.btns{
+    display:flex;
+    align-items:center;
+    margin-top:30px;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.demoimg{
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.demoimg img{
+    width:100%;
+    max-width:650px;
+    height:auto;
+}
+
+/* =========================
+   LOWER TITLE
+========================= */
+
 .lowerContent{
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
+    margin-top:180px;
 }
 
 .hook{
-    text-align: center;
+    text-align:center;
 }
+
+.hook h2{
+    margin:0;
+    font-size:42px;
+}
+
 .coloredhook{
-    margin-top: -10px;
-    color:#0fe159
+    color:#29b058;
+    margin-top:5px;
 }
+
+/* =========================
+   FEATURE GRID
+========================= */
 
 .Gridshow{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
 }
 
+.productgrid{
+    background:#151515;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    transition:.3s;
+}
+
+.productgrid:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.feature-icon{
+    width:100px;
+    height:100px;
+    object-fit:contain;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.Description h3{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.greycharacter{
+    color:#9e9e9e;
+    margin:5px 0;
+}
