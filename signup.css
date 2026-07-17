@@ -1,0 +1,124 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background:linear-gradient(
+        135deg,
+        #07101f,
+        #152a58,
+        #000000
+    );
+
+    color:white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.backBtn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    padding: 12px 22px;
+    background-color: #29b058;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight:bold;
+    transition: background-color 0.3s ease;
+}
+.backBtn:hover{
+    background:#22a24e;
+}
+.logo{
+    width:400px;
+    height:auto;
+    margin-bottom:5px;
+}
+/* Login */
+.card {
+    background-color: rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    border-radius: 30px;
+    padding: 45px;
+    width: 380px;
+}
+
+.card h2{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 34px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input{
+    padding:16px;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:16px;
+
+    background:#20242c;
+    color:white;
+}
+input::placeholder{
+    color:#9ca3af;
+}
+input:focus{
+    outline:none;
+    border:2px solid #29b058;
+}
+form button{
+    margin-top:10px;
+    padding:16px;
+    border-radius: 20px;
+    border:#29b058;
+    background:#29b058;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+form button:hover{
+    background:#23a14f;
+    transform:translateY(-2px);
+}
+.Register{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.Register p{
+    margin:0;
+    color:#bdbdbd;
+}
+.register{
+    background:none;
+    border:none;
+
+    color:#29b058;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+.register:hover{
+    text-decoration:underline;
+}
