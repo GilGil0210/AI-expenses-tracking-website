@@ -1,12 +1,46 @@
 body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     min-height: 100vh;
     font-family: Arial, sans-serif;
     color: white;
 
-    background: linear-gradient(
-        to bottom,
-        #494949,
+    background:linear-gradient(
+        135deg,
+        #07101f,
+        #152a58,
         #000000
     );
+
+    color:white;
+}
+.backBtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 20px;
+    background-color: #29b058;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.card {
+    background-color: #57595a;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+}
+
+.card h2{
+    text-align: center;
 }
