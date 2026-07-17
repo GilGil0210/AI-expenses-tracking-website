@@ -55,3 +55,63 @@ body{
 .sidebar a:hover{
     background:#29b058;
 }
+.grid-container{
+     display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    /* three rows */
+    grid-template-rows:
+        170px
+        340px
+        320px;
+
+    gap:20px;
+}
+.main-content{
+
+    margin-left:320px;
+
+    padding:40px;
+
+    width:calc(100% - 320px);
+
+    min-height:100vh;
+}
+#total-Balance{
+    grid-column:1;
+    grid-row:1;
+}
+#this-month{
+    grid-column:2;
+    grid-row:1;
+}
+
+#Saved{
+    grid-column:3;
+    grid-row:1;
+}
+
+#Upcoming-Bills{
+    grid-column:4;
+    grid-row:1;
+}
+#Spending-Overview{
+    grid-column:1 / 3;
+    grid-row:2;
+}
+
+#Spending-Category{
+    grid-column:3 / 5;
+    grid-row:2;
+}
+#Recent{
+    grid-column:1/5;
+    grid-row:3;
+}
+.card{
+    background: #1a1f2e;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+}

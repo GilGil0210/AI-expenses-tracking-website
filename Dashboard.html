@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css" />
+    <script src="balanceMath.js"></script>
   </head>
   <body>
     <div class="container">
@@ -19,15 +20,28 @@
       </aside>
       <main class="main-content">
         <div class="grid-container">
-          <div class="Total"></div>
-          <div class="current"></div>
-          <div class="Saved"></div>
-          <div class="Upcoming Bills"></div>
-          <div class="Spending Overview"></div>
-          <div class="SpendingCategory"></div>
-          <div class="Recent"></div>
+          <div class="card" id="total-Balance">
+            <h3>Total Balance</h3>
+            <h1>$0.00</h1>
+          </div>
+          <div class="card" id="this-month">
+            <h3>This Month</h3>
+            <h1>$0.00</h1>
+          </div>
+          <div class="card" id="Saved">
+            <h3>Saved</h3>
+            <h1>$0.00</h1>
+          </div>
+          <div class="card" id="Upcoming-Bills">
+            <h3>Upcoming Bills</h3>
+            <h1>$0.00</h1>
+          </div>
+          <div class="card" id="Spending-Overview"></div>
+          <div class="card" id="Spending-Category"></div>
+          <div class="card" id="Recent"></div>
         </div>
       </main>
     </div>
+    <script src="balanceMath.js"></script>
   </body>
 </html>
