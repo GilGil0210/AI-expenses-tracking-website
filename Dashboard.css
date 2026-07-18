@@ -56,16 +56,13 @@ body{
     background:#29b058;
 }
 .grid-container{
-     display:grid;
-
+    display:grid;
     grid-template-columns:repeat(4,1fr);
-
     /* three rows */
     grid-template-rows:
         170px
         350px
         320px;
-
     gap:20px;
 }
 .main-content{

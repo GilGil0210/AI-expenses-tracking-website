@@ -71,44 +71,31 @@ function displayTransactions() {
 function attachDeleteButtons(){
 
     const buttons=document.querySelectorAll(".deleteBtn");
-
     buttons.forEach(function(button){
-
         button.addEventListener("click",function(){
-
             const index=this.dataset.index;
-
             transactions.splice(index,1);
             saveTransactions();
             displayTransactions();
-
         });
 
     });
 
 }
 addButton.addEventListener("click",function(){
-
     overlay.style.display="flex";
-
 });
 
 cancelButton.addEventListener("click",function(){
-
     overlay.style.display="none";
-
 });
 
 saveButton.addEventListener("click",function(){
 
     const merchant=document.getElementById("merchant").value;
-
     const category=document.getElementById("category").value;
-
     const date=document.getElementById("date").value;
-
     const amount=Number(document.getElementById("amount").value);
-
     transactions.push({
 
         merchant,
