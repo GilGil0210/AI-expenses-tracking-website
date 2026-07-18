@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="transactions.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <img class="logo" src="indexImages/SpendBetterLogo.png" />
+        <nav>
+          <a href="#">🏠 Dashboard</a>
+          <a href="#">💰 Receipts</a>
+          <a href="#">📈 Transactions</a>
+          <a href="#">📅 Budgets</a>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <div class="topbar">
+          <h1>Transactions</h1>
+          <button class="add">+ Add Transactions</button>
+        </div>
+        <!-- */filters*/ -->
+        <div class="filters">
+          <button class="active">All</button>
+          <button>🍔 Food</button>
+          <button>🚗 Transport</button>
+          <button>🛒 Shopping</button>
+          <button>💡 Bills</button>
+          <button>📦 Other</button>
+        </div>
+        <!-- /*tables*/ -->
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Merchant</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="transactionTable"></tbody>
+          </table>
+          <div id="overlay" class="overlay">
+            <div class="popup">
+              <h2>Add Transaction</h2>
+
+              <input id="merchant" placeholder="Merchant" />
+
+              <input id="category" placeholder="Category" />
+
+              <input id="date" type="date" />
+
+              <input id="amount" type="number" placeholder="Amount" />
+
+              <div class="buttons">
+                <button id="saveBtn">Save</button>
+
+                <button id="cancelBtn">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="transactions.js"></script>
+  </body>
+</html>

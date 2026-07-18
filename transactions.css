@@ -1,0 +1,239 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: linear-gradient(
+        to bottom,
+
+        /* Upper 60% */
+        #07101f 0%,
+        #152a58 30%,
+        #07202f 60%,
+
+        /* Lower 40% */
+        #000000 60%,
+        #000000 100%
+    );
+}
+.logo{
+    width:150px;
+    height: auto;
+    margin-bottom:10px;
+}
+.sidebar{
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:260px;
+    height:100vh;
+
+    background:#14181d;
+
+    padding:30px;
+
+    overflow-y:auto;
+}
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+}
+.sidebar a:hover{
+    background:#29b058;
+}
+.main-content{
+    margin-left: 320px;
+     padding:40px;
+
+    /* width:calc(100% - 320px); */
+
+    min-height:100vh;
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+}
+.add{
+    padding: 6px 12px !important;
+    background: #29b058;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.add:hover{
+    background: #23994b;
+}
+.filters{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.filters button{
+    background:#1a1f2e;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+}
+.filters .active{
+
+    background:#29b058;
+
+}
+.table-card{
+
+    margin-top:30px;
+
+    background:#1a1f2e;
+
+    border-radius:20px;
+
+    padding:20px;
+
+}
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+th{
+
+    text-align:left;
+
+    padding:18px;
+
+    color:#bdbdbd;
+
+}
+td{
+
+    padding:18px;
+
+    border-top:1px solid #2a3145;
+
+}
+tbody tr:hover{
+
+    background:#22283b;
+
+}
+.expense{
+
+    color:#ff7777;
+
+    font-weight:bold;
+
+}
+.income{
+
+    color:#4be07d;
+
+    font-weight:bold;
+
+}
+.action-btn{
+
+    border:none;
+
+    background:#2a3145;
+
+    color:white;
+
+    padding:8px 10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+.editBtn{
+    background-color: #2a3145;
+}
+.deleteBtn{
+    background-color: #2a3145;
+}
+.overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.4);
+
+    backdrop-filter:blur(8px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.popup{
+
+    width:400px;
+
+    background:#1a1f2e;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+.popup input{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2a3145;
+
+    color:white;
+
+}
+.buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+    
+    gap:10px;
+
+}
