@@ -63,7 +63,7 @@ body{
     /* three rows */
     grid-template-rows:
         170px
-        340px
+        350px
         320px;
 
     gap:20px;
@@ -74,7 +74,7 @@ body{
 
     padding:40px;
 
-    width:calc(100% - 320px);
+    /* width:calc(100% - 320px); */
 
     min-height:100vh;
 }
@@ -108,10 +108,57 @@ body{
 #Recent{
     grid-column:1/5;
     grid-row:3;
+    margin-top: 50px;
 }
 .card{
     background: #1a1f2e;
     border-radius: 20px;
     padding: 20px;
     color: white;
+}
+canvas{
+    width:90% !important;
+    height:280px !important;
+}
+
+#Spending-Overview{
+    height:350px;
+}
+
+#Spending-Category{
+    height:350px;
+}
+.transaction-table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+.transaction-table th {
+    text-align:left;
+    color:#9ca3af;
+
+    padding:15px;
+
+    border-bottom:1px solid #30363d;
+}
+.transaction-table tr:hover{
+
+    background:#232936;
+}
+.transaction-table td{
+
+    padding:15px;
+
+    border-bottom:1px solid #30363d;
+}
+.expense{
+
+    color:#ff6565;
+    font-weight:bold;
+}
+
+.income{
+
+    color:#29b058;
+    font-weight:bold;
 }

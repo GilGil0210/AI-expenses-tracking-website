@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css" />
-    <script src="balanceMath.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="balanceMath.js"></script> -->
   </head>
   <body>
     <div class="container">
@@ -36,12 +37,32 @@
             <h3>Upcoming Bills</h3>
             <h1>$0.00</h1>
           </div>
-          <div class="card" id="Spending-Overview"></div>
-          <div class="card" id="Spending-Category"></div>
-          <div class="card" id="Recent"></div>
+          <div class="card" id="Spending-Overview">
+            <h3>Spending Overview</h3>
+            <canvas id="lineChart"></canvas>
+          </div>
+          <div class="card" id="Spending-Category">
+            <h3>Spending by Category</h3>
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div class="card" id="Recent">
+            <table class="transaction-table">
+              <thead>
+                <tr>
+                  <th>Merchant</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+
+              <tbody id="transactionBody"></tbody>
+            </table>
+          </div>
         </div>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="balanceMath.js"></script>
   </body>
 </html>
