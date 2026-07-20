@@ -1,0 +1,29 @@
+{
+  "name": "ai-expenses-tracking-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "balanceMath.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GilGil0210/AI-expenses-tracking-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/GilGil0210/AI-expenses-tracking-website/issues"
+  },
+  "homepage": "https://github.com/GilGil0210/AI-expenses-tracking-website#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "openai": "^6.48.0"
+  }
+}

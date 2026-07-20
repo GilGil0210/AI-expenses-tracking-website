@@ -2,7 +2,7 @@ const receiptInput = document.getElementById("receiptInput");
 const uploadButton = document.getElementById("uploadButton");
 
 const receiptImage = document.getElementById("receiptImage");
-
+const category = document.getElementById("category");
 const merchant = document.getElementById("merchant");
 const date = document.getElementById("date");
 const subtotal = document.getElementById("subtotal");
@@ -17,28 +17,43 @@ uploadButton.addEventListener("click", function () {
     receiptInput.click();
 
 });
-receiptInput.addEventListener("change", function () {
+receiptInput.addEventListener("change", async function () {
 
     const file = this.files[0];
 
     if (!file) return;
 
+    // Show image preview
     const reader = new FileReader();
 
-    reader.onload = function (e) {
-
+    reader.onload = function(e){
         receiptImage.src = e.target.result;
-
-        // Fake extracted data
-        merchant.textContent = "McDonald's";
-        date.textContent = "Jul 31, 2024";
-        subtotal.textContent = "$10.27";
-        tax.textContent = "$1.45";
-        total.textContent = "$11.72";
-
     };
 
     reader.readAsDataURL(file);
+
+    // Send image to your backend
+    const formData = new FormData();
+
+    formData.append("receipt", file);
+
+    const response = await fetch("http://localhost:3000/scan", {
+
+        method: "POST",
+
+        body: formData
+
+    });
+
+    const data = await response.json();
+
+    merchant.textContent = data.merchant;
+    date.textContent = data.date;
+    subtotal.textContent = data.subtotal;
+    tax.textContent = data.tax;
+    total.textContent = data.total;
+
+    category.value = data.category;
 
 });
 const saveExpense = document.getElementById("saveExpense");
@@ -152,7 +167,7 @@ dropArea.addEventListener("dragleave", function () {
 
 });
 
-dropArea.addEventListener("drop", function (e) {
+dropArea.addEventListener("drop", async function (e) {
 
     e.preventDefault();
 
@@ -162,21 +177,36 @@ dropArea.addEventListener("drop", function (e) {
 
     if (!file) return;
 
+    // Show image preview
     const reader = new FileReader();
 
     reader.onload = function (event) {
 
         receiptImage.src = event.target.result;
 
-        merchant.textContent = "McDonald's";
-        date.textContent = "Jul 31, 2024";
-        subtotal.textContent = "$10.27";
-        tax.textContent = "$1.45";
-        total.textContent = "$11.72";
-
     };
 
     reader.readAsDataURL(file);
+
+    // Send the image to your backend
+    const formData = new FormData();
+
+    formData.append("receipt", file);
+
+    const response = await fetch("http://localhost:3000/scan", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await response.json();
+
+    // Fill in the receipt details returned by ChatGPT
+    merchant.textContent = data.merchant;
+    date.textContent = data.date;
+    subtotal.textContent = data.subtotal;
+    tax.textContent = data.tax;
+    total.textContent = data.total;
+    category.value = data.category;
 
 });
 displayReceipts();
