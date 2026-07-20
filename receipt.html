@@ -19,11 +19,60 @@
       </aside>
       <main class="main-content">
         <div class="grid-container">
-          <div class="card" id="upload"></div>
-          <div class="card" id="Extracted"></div>
-          <div class="card" id="recent-Scans"></div>
+          <div class="card" id="upload">
+            <div class="upload-area">
+              <input type="file" id="receiptInput" accept="image/*" hidden />
+
+              <button id="uploadButton">Upload Receipt</button>
+
+              <p>Drag & Drop Receipt Here</p>
+            </div>
+          </div>
+          <div class="card" id="Extracted">
+            <h2>Extracted Details</h2>
+            <div class="details-layout">
+              <!-- Receipt Preview -->
+              <div class="receipt-preview">
+                <img id="receiptImage" src="" alt="Receipt Preview" />
+              </div>
+              <!-- Information -->
+              <div class="receipt-info">
+                <h3>Merchant</h3>
+                <p id="merchant">-</p>
+                <hr />
+                <h3>Date</h3>
+                <p id="date">-</p>
+                <hr />
+                <h3>Subtotal</h3>
+                <p id="subtotal">-</p>
+                <hr />
+                <h3>Tax</h3>
+                <p id="tax">-</p>
+                <hr />
+                <h3>Total</h3>
+                <p id="total">-</p>
+                <hr />
+                <h3>Category</h3>
+                <select id="category">
+                  <option>Food</option>
+                  <option>Transport</option>
+                  <option>Shopping</option>
+                  <option>Bills</option>
+                  <option>Entertainment</option>
+                  <option>Other</option>
+                </select>
+                <button id="saveExpense">Save Expense</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="recent-Scans">
+            <div id="recentScans">
+              <!-- JavaScript will add receipts here -->
+            </div>
+          </div>
         </div>
       </main>
     </div>
+    <script src="receipt.js"></script>
   </body>
 </html>

@@ -53,9 +53,9 @@ body{
 }
 .grid-container{
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 350px 350px;
-    gap:15px;
+    grid-template-columns:380px 1fr;
+    grid-template-rows:350px 350px;
+    gap:25px;
 }
 #upload{
     grid-column: 1;
@@ -70,11 +70,211 @@ body{
     grid-row: 2;
 }
 .card{
-    background-color: #1a1f2e;
-    border-radius: 10px;
+    background:#1a1f2e;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.card h2{
+    margin-bottom:20px;
 }
 .main-content{
     margin-left:320px;
     padding:40px;
     min-height:100vh;
+}
+.main-content h1{
+    margin-bottom:30px;
+}
+.upload-area{
+    height:240px;
+    border:2px dashed #3c4765;
+    border-radius:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:18px;
+}
+#uploadButton{
+    padding:14px 28px;
+    border:none;
+    border-radius:12px;
+    background:#29b058;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+#uploadButton:hover{
+    background:#23994b;
+}
+
+.upload-area p{
+    color:#9ca3af;
+}
+.details-layout{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:30px;
+
+}
+.receipt-preview{
+    background:#0d1118;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+}
+
+.receipt-preview img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+}
+.receipt-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.receipt-info h3{
+
+    margin-top:12px;
+
+    margin-bottom:8px;
+
+    color:#9ca3af;
+
+}
+
+.receipt-info p{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+.receipt-info hr{
+    border:none;
+    border-top:1px solid #30374b;
+    margin:8px 0;
+}
+#category{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#10151f;
+
+    color:white;
+
+    font-size:16px;
+
+
+}
+#saveExpense{
+
+    margin-top:30px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#29b058;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#saveExpense:hover{
+
+    background:#23994b;
+
+}
+
+
+/* ===========================
+   Recent Scans
+=========================== */
+
+#recentScans{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+/* One receipt */
+
+.scan{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #30374b;
+
+}
+
+.scan img{
+
+    width:55px;
+
+    height:75px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    background:white;
+
+}
+
+.scan h3{
+
+    margin-bottom:5px;
+
+    font-size:18px;
+
+}
+
+.scan p{
+
+    color:#9ca3af;
+
+    font-size:15px;
+
 }
