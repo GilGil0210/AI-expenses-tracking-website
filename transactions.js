@@ -31,7 +31,7 @@ function displayTransactions() {
     table.innerHTML = "";
 
     // Go through every transaction
-    transactions.forEach(function(transaction) {
+    transactions.forEach(function(transaction, index) {
 
         // Create a new table row
         const row = document.createElement("tr");
@@ -53,9 +53,8 @@ function displayTransactions() {
 
             <td>
 
-                <button class="editBtn">✏️</button>
-
-                <button class="deleteBtn">🗑️</button>
+                <button class="editBtn" data-index="${index}">✏️</button>
+                <button class="deleteBtn" data-index="${index}">🗑️</button>
 
             </td>
 
@@ -66,6 +65,7 @@ function displayTransactions() {
 
     });
     attachDeleteButtons();
+    attachEditButtons();
 
 }
 function attachDeleteButtons(){
@@ -77,6 +77,30 @@ function attachDeleteButtons(){
             transactions.splice(index,1);
             saveTransactions();
             displayTransactions();
+        });
+
+    });
+
+}
+function attachEditButtons(){
+
+    const buttons = document.querySelectorAll(".editBtn");
+
+    buttons.forEach(function(button){
+
+        button.addEventListener("click", function(){
+
+            const index = this.dataset.index;
+
+            const transaction = transactions[index];
+
+            document.getElementById("merchant").value = transaction.merchant;
+            document.getElementById("category").value = transaction.category;
+            document.getElementById("date").value = transaction.date;
+            document.getElementById("amount").value = transaction.amount;
+
+            overlay.style.display = "flex";
+
         });
 
     });
