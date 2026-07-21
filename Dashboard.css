@@ -22,18 +22,16 @@ body{
 }
 .sidebar{
     position:fixed;
-
     left:0;
     top:0;
-
     width:260px;
     height:100vh;
-
     background:#14181d;
-
     padding:30px;
-
     overflow-y:auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .logo{
@@ -54,6 +52,23 @@ body{
 }
 .sidebar a:hover{
     background:#29b058;
+}
+.logout-btn{
+
+    margin-top: auto;
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover{
+    background: #c9302c;
 }
 .grid-container{
     display:grid;
