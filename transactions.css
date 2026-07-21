@@ -84,7 +84,32 @@ body{
     margin-top:25px;
 
 }
+#monthFilter{
+    background:#1a1f2e;
 
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+}
+#yearFilter{
+    background:#1a1f2e;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+}
 .filters button{
     background:#1a1f2e;
 
@@ -253,5 +278,38 @@ tbody tr:hover{
 
     font-size:16px;
 
+
+}
+.pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.pagination button{
+
+    padding:10px 15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2d354d;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.pagination button.active{
+
+    background:#29b058;
 
 }
