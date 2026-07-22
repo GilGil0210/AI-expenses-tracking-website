@@ -1,3 +1,6 @@
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import cors from "cors";
 import express from "express";
 import multer from "multer";
@@ -6,7 +9,9 @@ import fs from "fs";
 import OpenAI from "openai";
 
 dotenv.config();
+await mongoose.connect(process.env.MONGO_URI);
 
+console.log("✅ MongoDB Connected");
 const app = express();
 app.use(cors());
 
