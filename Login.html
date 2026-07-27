@@ -9,21 +9,27 @@
   <body>
     <section class="container">
       <div class="topbar">
-        <button onclick="window.history.back()" class="backBtn">Back</button>
+        <button onclick="window.location.href = 'index.html'" class="backBtn">
+          Back
+        </button>
       </div>
       <img class="logo" src="indexImages/SpendBetterLogo.png" />
       <div class="card">
         <h2>Login</h2>
-        <form>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+        <form id="loginForm">
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <p id="errorMsg" class="errorMsg"></p>
           <button type="submit">Login</button>
         </form>
         <div class="Register">
           <p>First time?</p>
-          <button href="signup.html" class="register">Sign up here</button>
+          <button id="goToSignup" href="signup.html" class="register">
+            Sign up here
+          </button>
         </div>
       </div>
     </section>
+    <script src="Login.js"></script>
   </body>
 </html>
