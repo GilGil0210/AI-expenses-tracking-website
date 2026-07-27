@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budgets</title>
+    <link rel="stylesheet" href="budgets.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <img class="logo" src="indexImages/SpendBetterLogo.png" />
+      <nav>
+        <a href="Dashboard.html">🏠 Dashboard</a>
+        <a href="#">💰 Receipts [Maintenance]</a>
+        <a href="transactions.html">📈 Transactions</a>
+        <a href="budgets.html">📅 Budgets</a>
+      </nav>
+      <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+    </aside>
+    <main class="main-content">
+      <div class="title">
+        <h1>Budgets</h1>
+      </div>
+      <div class="tabs">
+        <button class="active-tab">Monthly Budgets</button>
+        <button>Budget History</button>
+      </div>
+      <div class="grid-container">
+        <div class="card" id="food-budgets">
+          <h3>Food</h3>
+          <h1 id="Food">$0.00</h1>
+        </div>
+        <div class="card" id="transport-budgets">
+          <h3>Transport</h3>
+          <h1 id="Transport">$0.00</h1>
+        </div>
+        <div class="card" id="Shopping-budgets">
+          <h3>Shopping</h3>
+          <h1 id="Shopping">$0.00</h1>
+        </div>
+        <div class="card" id="Bills-budgets">
+          <h3>Bills</h3>
+          <h1 id="Bills">$0.00</h1>
+        </div>
+        <div class="card" id="other-budgets">
+          <h3>Others</h3>
+          <h1 id="Others">$0.00</h1>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
