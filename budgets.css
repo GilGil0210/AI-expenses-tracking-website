@@ -76,6 +76,74 @@ body{
 
     min-height:100vh;
 }
+.title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.title h1{
+
+    font-size:40px;
+}
+.active{
+
+    background:#1f9d55;
+}
+.add-budget{
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:16px;
+}
+
+.tabs{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+.tabs button{
+
+    background:transparent;
+
+    color:#999;
+
+    border:none;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    padding-bottom:8px;
+}
+
+.active-tab{
+
+    color:#22c55e !important;
+
+    border-bottom:3px solid #22c55e !important;
+}
 .grid-container{
     display:grid;
     grid-template-columns:repeat(1,1fr);
@@ -90,5 +158,114 @@ body{
     background: #1a1f2e;
     border-radius: 20px;
     padding: 20px;
+    display: flex;
     color: white;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.right{
+
+    width:420px;
+}
+
+.numbers{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    color:#d1d5db;
+}
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#2c3448;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.fill{
+
+    height:100%;
+
+    border-radius:20px;
+}
+.food{
+
+    width:69%;
+
+    background:#f6c343;
+}
+
+.shopping{
+
+    width:96%;
+
+    background:#ff5c74;
+}
+
+.transport{
+
+    width:69%;
+
+    background:#f6c343;
+}
+
+.entertainment{
+
+    width:31%;
+
+    background:#2dd36f;
+}
+
+.bills{
+
+    width:53%;
+
+    background:#43d17c;
+}
+
+/* History */
+#historySection{
+    display:none;
+}
+.history-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 2fr 1fr 1fr;
+
+    gap:15px;
+
+    background:#1a1f2e;
+
+    padding:25px;
+
+    border-radius:20px;
+}
+
+.history-grid div{
+
+    padding:12px;
+
+    background:#242b3d;
+
+    border-radius:8px;
+}
+
+.history-header{
+
+    background:#22c55e !important;
+
+    font-weight:bold;
 }

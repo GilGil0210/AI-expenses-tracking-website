@@ -20,33 +20,120 @@
     <main class="main-content">
       <div class="title">
         <h1>Budgets</h1>
+        <button class="add-budget">+ Add Budget</button>
       </div>
       <div class="tabs">
-        <button class="active-tab">Monthly Budgets</button>
-        <button>Budget History</button>
+        <button id="monthlyBtn" class="active-tab">Monthly Budgets</button>
+        <button id="historyBtn">Budget History</button>
       </div>
-      <div class="grid-container">
-        <div class="card" id="food-budgets">
-          <h3>Food</h3>
-          <h1 id="Food">$0.00</h1>
+      <div id="monthlySection">
+        <div class="grid-container">
+          <div class="card" id="food-budgets">
+            <div class="left">
+              <h3>Food</h3>
+              <h1 id="Food">$0.00</h1>
+            </div>
+            <div class="right">
+              <div class="numbers">
+                <span>$346.21 spent</span>
+                <span>69%</span>
+              </div>
+
+              <div class="progress">
+                <div class="fill food"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="transport-budgets">
+            <div class="left">
+              <h3>Transport</h3>
+              <h1 id="Transport">$0.00</h1>
+            </div>
+            <div class="right">
+              <div class="numbers">
+                <span>$173.25 spent</span>
+
+                <span>69%</span>
+              </div>
+
+              <div class="progress">
+                <div class="fill transport"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="Shopping-budgets">
+            <div class="left">
+              <h3>Shopping</h3>
+              <h1 id="Shopping">$0.00</h1>
+            </div>
+            <div class="right">
+              <div class="numbers">
+                <span>$289.41 spent</span>
+
+                <span>96%</span>
+              </div>
+
+              <div class="progress">
+                <div class="fill shopping"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="Bills-budgets">
+            <div class="left">
+              <h3>Bills</h3>
+              <h1 id="Bills">$0.00</h1>
+            </div>
+            <div class="right">
+              <div class="numbers">
+                <span>$210.50 spent</span>
+                <span>53%</span>
+              </div>
+              <div class="progress">
+                <div class="fill bills"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="other-budgets">
+            <div class="left">
+              <h3>Others</h3>
+              <h1 id="Others">$0.00</h1>
+            </div>
+            <div class="right">
+              <div class="numbers">
+                <span>$45.98 spent</span>
+                <span>31%</span>
+              </div>
+              <div class="progress">
+                <div class="fill entertainment"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card" id="transport-budgets">
-          <h3>Transport</h3>
-          <h1 id="Transport">$0.00</h1>
-        </div>
-        <div class="card" id="Shopping-budgets">
-          <h3>Shopping</h3>
-          <h1 id="Shopping">$0.00</h1>
-        </div>
-        <div class="card" id="Bills-budgets">
-          <h3>Bills</h3>
-          <h1 id="Bills">$0.00</h1>
-        </div>
-        <div class="card" id="other-budgets">
-          <h3>Others</h3>
-          <h1 id="Others">$0.00</h1>
+      </div>
+      <div id="historySection">
+        <div class="history-grid">
+          <div class="history-header">Month</div>
+          <div class="history-header">Category</div>
+          <div class="history-header">Budget</div>
+          <div class="history-header">Spent</div>
+
+          <div>January 2026</div>
+          <div>Food</div>
+          <div>$500</div>
+          <div>$421</div>
+
+          <div>January 2026</div>
+          <div>Transport</div>
+          <div>$250</div>
+          <div>$180</div>
+
+          <div>February 2026</div>
+          <div>Shopping</div>
+          <div>$300</div>
+          <div>$290</div>
         </div>
       </div>
     </main>
+    <script src="budgets.js"></script>
   </body>
 </html>
