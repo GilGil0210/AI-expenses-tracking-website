@@ -11,6 +11,7 @@ import OpenAI from "openai";
 import User from "./models/User.js";
 import Transaction from "./models/Transaction.js";
 import { verifyToken } from "./middleware/auth.js";
+import Budget from "./models/Budget.js";
 
 dotenv.config();
 await mongoose.connect(process.env.MONGO_URI);
@@ -218,6 +219,52 @@ app.delete("/transactions/:id", verifyToken, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Could not delete transaction." });
+  }
+});
+// ===============================
+// Budgets (per-user, resets every month)
+// ===============================
+function getEndOfMonth() {
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+}
+
+app.get("/budgets", verifyToken, async (req, res) => {
+  try {
+    const budgets = await Budget.find({ user: req.userId });
+    res.json(budgets);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Could not load budgets." });
+  }
+});
+
+app.post("/budgets", verifyToken, async (req, res) => {
+  try {
+    const { category, amount } = req.body;
+    if (!category || amount == null) {
+      return res.status(400).json({ error: "Category and amount are required." });
+    }
+    const budget = await Budget.findOneAndUpdate(
+      { user: req.userId, category },
+      { amount, expiresAt: getEndOfMonth() },
+      { new: true, upsert: true }
+    );
+    res.status(201).json(budget);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Could not save budget." });
+  }
+});
+
+app.delete("/budgets/:id", verifyToken, async (req, res) => {
+  try {
+    const budget = await Budget.findOneAndDelete({ _id: req.params.id, user: req.userId });
+    if (!budget) return res.status(404).json({ error: "Budget not found." });
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Could not delete budget." });
   }
 });
 
