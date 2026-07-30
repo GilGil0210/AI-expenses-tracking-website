@@ -128,7 +128,10 @@ function attachEditButtons() {
       document.getElementById("merchant").value = transaction.merchant;
       document.getElementById("category").value = transaction.category;
       document.getElementById("date").value = transaction.date;
-      document.getElementById("amount").value = transaction.amount;
+      document.getElementById("type").value = transaction.amount < 0 ? "expense" : "income";
+      document.getElementById("amount").value = Math.abs(transaction.amount);
+      // document.getElementById("amount").value = Math.abs(transaction.amount);
+      // document.getElementById("amount").value = transaction.amount;
 
       overlay.style.display = "flex";
     });
@@ -140,6 +143,7 @@ addButton.addEventListener("click", function () {
   document.getElementById("merchant").value = "";
   document.getElementById("date").value = "";
   document.getElementById("amount").value = "";
+  document.getElementById("type").value = "expense";
   overlay.style.display = "flex";
 });
 
@@ -151,8 +155,10 @@ saveButton.addEventListener("click", async function () {
   const merchant = document.getElementById("merchant").value;
   const category = document.getElementById("category").value;
   const date = document.getElementById("date").value;
-  const amount = Number(document.getElementById("amount").value);
+  const type = document.getElementById("type").value;
+  let amount = Number(document.getElementById("amount").value);
 
+  if (type === "expense") amount = -amount;
   const payload = { merchant, category, date, amount };
 
   try {

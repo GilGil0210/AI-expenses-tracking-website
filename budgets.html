@@ -35,12 +35,12 @@
             </div>
             <div class="right">
               <div class="numbers">
-                <span>$346.21 spent</span>
-                <span>69%</span>
+                <span id="Food-spent">$0.00 spent</span>
+                <span id="Food-percent">0%</span>
               </div>
 
               <div class="progress">
-                <div class="fill food"></div>
+                <div class="fill food" id="Food-fill" style="width: 0%"></div>
               </div>
             </div>
           </div>
@@ -51,13 +51,16 @@
             </div>
             <div class="right">
               <div class="numbers">
-                <span>$173.25 spent</span>
-
-                <span>69%</span>
+                <span id="Transport-spent">$0.00 spent</span>
+                <span id="Transport-percent">0%</span>
               </div>
 
               <div class="progress">
-                <div class="fill transport"></div>
+                <div
+                  class="fill transport"
+                  id="Transport-fill"
+                  style="width: 0%"
+                ></div>
               </div>
             </div>
           </div>
@@ -68,13 +71,16 @@
             </div>
             <div class="right">
               <div class="numbers">
-                <span>$289.41 spent</span>
-
-                <span>96%</span>
+                <span id="Shopping-spent">$0.00 spent</span>
+                <span id="Shopping-percent">0%</span>
               </div>
 
               <div class="progress">
-                <div class="fill shopping"></div>
+                <div
+                  class="fill shopping"
+                  id="Shopping-fill"
+                  style="width: 0%"
+                ></div>
               </div>
             </div>
           </div>
@@ -85,11 +91,11 @@
             </div>
             <div class="right">
               <div class="numbers">
-                <span>$210.50 spent</span>
-                <span>53%</span>
+                <span id="Bills-spent">$0.00 spent</span>
+                <span id="Bills-percent">0%</span>
               </div>
               <div class="progress">
-                <div class="fill bills"></div>
+                <div class="fill bills" id="Bills-fill" style="width: 0%"></div>
               </div>
             </div>
           </div>
@@ -100,18 +106,22 @@
             </div>
             <div class="right">
               <div class="numbers">
-                <span>$45.98 spent</span>
-                <span>31%</span>
+                <span id="Other-spent">$0.00 spent</span>
+                <span id="Other-percent">0%</span>
               </div>
               <div class="progress">
-                <div class="fill entertainment"></div>
+                <div
+                  class="fill entertainment"
+                  id="Food-fill"
+                  style="width: 0%"
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div id="historySection">
-        <div class="history-grid">
+        <div class="history-grid" id="historyGrid">
           <div class="history-header">Month</div>
           <div class="history-header">Category</div>
           <div class="history-header">Budget</div>
