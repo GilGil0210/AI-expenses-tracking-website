@@ -301,10 +301,8 @@ app.post("/budgets", verifyToken, async (req, res) => {
 // All PAST months' budgets, each with real spend for that month
 app.get("/budgets/history", verifyToken, async (req, res) => {
   try {
-    const currentMonth = getCurrentMonthString();
     const budgets = await Budget.find({
-      user: req.userId,
-      month: { $ne: currentMonth }
+      user: req.userId
     }).sort({ month: -1 });
 
     const results = [];
