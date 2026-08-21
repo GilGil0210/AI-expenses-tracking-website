@@ -260,20 +260,24 @@ async function loadDashboard() {
   // ===============================
 
   const table = document.getElementById("transactionBody");
-  table.innerHTML = "";
+table.innerHTML = "";
 
-  transactions.forEach(function (transaction) {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-        <td>${transaction.merchant}</td>
-        <td>${transaction.category}</td>
-        <td>${transaction.date}</td>
-        <td class="${transaction.amount < 0 ? "expense" : "income"}">
-            $${transaction.amount.toFixed(2)}
-        </td>
-    `;
-    table.appendChild(row);
-  });
+const recentTransactions = [...transactions]
+  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  .slice(0, 3);
+
+recentTransactions.forEach(function (transaction) {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+      <td>${transaction.merchant}</td>
+      <td>${transaction.category}</td>
+      <td>${transaction.date}</td>
+      <td class="${transaction.amount < 0 ? "expense" : "income"}">
+          $${transaction.amount.toFixed(2)}
+      </td>
+  `;
+  table.appendChild(row);
+});
 
   // ===============================
   // Pie Chart
