@@ -214,7 +214,8 @@
 //     }
 
 // });
-const API_BASE = "http://localhost:3000";
+// const API_BASE = "http://localhost:3000";
+const API_BASE = "https://ai-expenses-tracking-website.onrender.com";
 const token = localStorage.getItem("token");
 
 async function loadDashboard() {
