@@ -65,7 +65,7 @@ async function handleReceiptFile(file) {
   formData.append("receipt", file);
 
   try {
-    const response = await fetch("http://localhost:3000/scan", {
+    const response = await fetch("https://ai-expenses-tracking-website.onrender.com", {
       method: "POST",
       body: formData
     });
